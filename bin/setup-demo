@@ -49,7 +49,7 @@ readdir(resolve(__dirname, '../settings/meetups'))
 			+ " public/i/events folder");
 	}
 })
-(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/images/*')) + " " +
+(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/images/')) + "* " +
 	stringify(resolve(__dirname, '../public/i/events/')))).match(
 		function (out, err) {
 			process.stdout.write(out);
@@ -58,8 +58,8 @@ readdir(resolve(__dirname, '../settings/meetups'))
 				throw new Error("Error ocurred");
 			}
 		})
-(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/settings/*')) +
-	" " + stringify(resolve(__dirname, '../settings/')))).match(
+(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/settings/')) +
+	"* " + stringify(resolve(__dirname, '../settings/')))).match(
 		function (out, err) {
 			process.stdout.write(out);
 			process.stderr.write(err);
