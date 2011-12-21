@@ -4,7 +4,7 @@
 	"main": "lib/server/server",
 	"private": true,
 	"dependencies": {
-		"forever": "https://github.com/nodejitsu/forever.git",
+		"forever": "https://github.com/nodejitsu/forever/tarball/master",
 		"nodemailer": "0.2.x",
 		"optimist": "0.2.x"
 	}
