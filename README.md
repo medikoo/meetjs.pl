@@ -9,14 +9,20 @@ It consist of individual modules/packages among which are old versions of
 It's not in ready state for reuse to build other applications but if you're interested
 in setting this application and playing with it, you can do with with following steps:
 
-* Have [node.js](http://nodejs.org) installed
-* `$ git clone  && cd meetjs.pl`
-* `$ npm install`
-* `$ bin/update`
-* Update config.js with needed details
-* Application won't be usable without data, so to fill files in settings folder and add some meetups
-or setup quick demo configuration with `bin/setup-demo`
-* Run server
+Have [node.js](http://nodejs.org) installed.
+
+	$ git clone  && cd meetjs.pl
+	$ npm install
+	$ bin/update
+
+Update config.js with needed details.
+
+Application won't be usable without data, so to fill files in settings folder and add some meetups
+or setup quick demo configuration with
+
+	$ bin/setup-demo
+
+Run server
 
 	$ node .
 
