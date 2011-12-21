@@ -17,21 +17,11 @@ Have [node.js](http://nodejs.org) installed.
 
 Update config.js with needed details.
 
-Application won't be usable without data, so to fill files in settings folder and add some meetups
-or setup quick demo configuration with
+Application won't be usable without data, so fill files in settings folder and add some meetups.
+Alternatively you can setup quick demo configuration instead:
 
 	$ bin/setup-demo
 
 Run server
 
 	$ node .
-
-Alternatively you may run it using forever (but due to forever limitation at current time it will work only with node 0.4.x branch):
-
-	$ bin/restart
-
-Stop server with
-
-	$ bin/stop
-
-
