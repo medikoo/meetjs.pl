@@ -49,8 +49,8 @@ readdir(resolve(__dirname, '../settings/meetups'))
 			+ " public/i/events folder");
 	}
 })
-(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/images/')) + "* " +
-	stringify(resolve(__dirname, '../public/i/events/')))).match(
+(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/images') + '/') +
+	"* " + stringify(resolve(__dirname, '../public/i/events') + '/'))).match(
 		function (out, err) {
 			process.stdout.write(out);
 			process.stderr.write(err);
@@ -58,8 +58,8 @@ readdir(resolve(__dirname, '../settings/meetups'))
 				throw new Error("Error ocurred");
 			}
 		})
-(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/settings/')) +
-	"* " + stringify(resolve(__dirname, '../settings/')))).match(
+(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/settings') + '/') +
+	"* " + stringify(resolve(__dirname, '../settings') + '/'))).match(
 		function (out, err) {
 			process.stdout.write(out);
 			process.stderr.write(err);
@@ -67,6 +67,7 @@ readdir(resolve(__dirname, '../settings/meetups'))
 				throw new Error("Error ocurred");
 			}
 		})
-(console.log.bind(console,
-	"Demo sucesfully setup. Run `bin/update & node .` to run application"))
-	.end();
+(function () {
+	console("Demo sucesfully setup. Run `bin/update & node .` "
+		+ "to run application");
+}).end();
