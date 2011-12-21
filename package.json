@@ -1,0 +1,11 @@
+{
+	"name": "meetjs.pl",
+	"version": "0.1.0",
+	"main": "lib/server/server",
+	"private": true,
+	"dependencies": {
+		"forever": "https://github.com/nodejitsu/forever.git",
+		"nodemailer": "0.2.x",
+		"optimist": "0.2.x"
+	}
+}

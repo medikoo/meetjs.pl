@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+	<head>
+		<meta charset="utf-8">
+		<title>meet.js</title>
+
+		<meta name="description" content="Hackathon Programistyczny Opera Team Up ">
+		<meta name="author" content="Joanna Zakrzewska, Piotr Kaleta">
+		<meta name="keywords" content="Opera Campus Crew Poznan, Opera Hackathon, Speed Dial" />
+		<meta name="copyright" content="AKAI Opera Campus Crew" />
+		<meta name="generator" content="Panic Coda">
+
+		<link href="/i/favicon.ico" rel="icon" type="image/x-icon" />
+		<link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/c/main.css" />
+		<script src="/j/main.js"></script>
+
+	</head>
+
+
+	<body id="root">
+		<div id="page">
+			<header>
+				<a href="/" id="logo" title="meet.js"><img alt="meet.js" src="/i/clear.gif" width="233" height="66" class="sprite-bg"/></a>
+
+				<nav>
+					<ul>
+						<li><a rel="#past-event-list" href="/#past-event-list">Poprzednie spotkania</a></li>
+						<li><a title="" href="/#initiative-description">O co chodzi?</a></li>
+						<li><a title="" href="/#become-prelegent">Zostań prelegentem</a></li>
+					</ul>
+					<a class="social-media-link sprite-bg" href="#" id="facebook" title=""></a>
+					<a class="social-media-link sprite-bg" href="#" id="twitter" title=""></a>
+				</nav>
+
+			</header>
+			<div id="content-wrap">
+				<section id="content">
+
+					<!-- current events list section -->
+					<div id="error-global-msg"></div>
+					<section id="event-list">
+						<div class="content-container">
+
+							<h1>Spotkaj Javascript w <em id="active-event-city">Krakowie</em></h1>
+
+							<ul id="event-map" class="sprite-bg"></ul>
+
+							<ul id="all-events"></ul>
+
+							<h1>Wezmą udział:</h1>
+							<ul class="event-participants" id="event-participants"></ul>
+						</div>
+					</section>
+					<!--end of  current events list section -->
+
+					<!--past events list section -->
+					<section id="past-event-list">
+						<div class="content-container">
+							<h1>Poprzednie spotkania</h1>
+							<ul id="past-event-list-ul"></ul>
+						</div>
+					</section>
+					<!--end of past events list section -->
+
+					<section id="meet-js-description">
+						<div class="content-container">
+
+							<section id="initiative-description">
+								<h1>O co chodzi?</h1>
+								<p>meet.js to cykl spotkań typu meetup skierowanych do programistów javascript organizowanych w największych ośrodkach
+									programistycznych w kraju. Projekt współtworzony jest przez <strong>Damiana Wielgosika</strong>, <strong>Pawła Czerskiego</strong> oraz <strong>Kamila Trebunię</strong>.</p>
+
+								<h1>Organizatorzy</h1>
+
+								<h2>Warszawa:</h2>
+								<ul class="local-organizers">
+									<li>
+										<img alt="Tomasz Gospodarczyk" src="/i/avatar/001.png"/>
+										<p>Tomasz Gospodarczyk</p>
+									</li>
+									<li>
+										<img alt="Tomasz Gospodarczyk" src="/i/avatar/001.png"/>
+										<p>Tomasz Gospodarczyk</p>
+									</li>
+								</ul>
+
+								<p>Chcesz organizować meet.js w swoim mieście? <a title="" href="#TODO:LINK">Daj znać!</a></p>
+							</section>
+
+							<section class="twitter-feed">
+								<h1 class="sprite-bg"><span>@</span>meetjs</h1>
+								<ul>
+									<li>Kolejna relacja z warszawskiewgo spotkania <a href="#">http://bit.ly/ersPO2</a> <span class="date">21 <abbr title="Marca">Mar</abbr></span></li>
+									<li><a href="#">http://on.fb.me/fGDjPW</a> photos from the last meet.js meeting in Warsaw <span class="date">20 <abbr title="Marca">Mar</abbr></span></li>
+									<li><a href="#">@1iClean1</a> nie chcę nic obiecywać, powinny być dość szybko ma jednak dziś urodziny, sam rozumiesz ;) <span class="date">19 <abbr title="Marca">Mar</abbr></span></li>
+								</ul>
+							</section>
+						</div>
+					</section>
+
+
+					<!--past events list section -->
+					<section id="become-prelegent">
+						<form>
+							<h1>Zostań prelegentem</h1>
+							<section class="choose-city">
+								<span>Wybierz spotkanie:</span>
+							</section>
+
+							<section class="speaker-info">
+								<div class="messages"></div>
+								<input id="speaker-name" name="name" placeholder="imię i nazwisko" type="text">
+
+								<input id="speaker-email" name="email" placeholder="adres email" type="email" class="right">
+
+								<textarea id="speech-description" name="description" placeholder="temat i opis prezentacji" type="text"></textarea>
+
+								<button type="submit"><span>wyślij zgłoszenie</span></button>
+							</section>
+
+						</form>
+					</section>
+					<!--end of past events list section -->
+
+
+
+				</section> <!--end of #content-->
+			</div>
+
+			<footer>meet.js &copy; 2011</footer>
+
+		</div> <!--end of #page-->
+
+</body>
+</html>

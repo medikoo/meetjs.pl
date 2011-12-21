@@ -1,0 +1,72 @@
+#!/usr/bin/env node
+
+var stringify = JSON.stringify
+  , readdir = require('fs').readdir
+  , resolve = require('path').resolve
+  , exec    = require('child_process').exec
+  , count = require('es5-ext/lib/Object/plain/count').call
+  , ba2p         = require('deferred/lib/async-to-promise').bind
+
+  , checkSettings;
+
+require('deferred/lib/ext/invoke');
+require('deferred/lib/ext/match');
+readdir = ba2p(readdir);
+
+checkSettings = function (path) {
+	var data;
+	try {
+		data = require(path)
+	} catch (e) {
+		return;
+	}
+	if (count(data)) {
+		throw new Error("Could not setup demo. " + path +
+			" looks as already configured");
+	}
+};
+
+checkSettings('../settings/locations');
+checkSettings('../settings/speakers');
+
+readdir(resolve(__dirname, '../settings/meetups'))
+	.invoke('filter', function (file) {
+		return (file.slice(-3) === '.js') && (file !== 'index.js');
+	})
+(function (files) {
+	if (files.length) {
+		throw new Error("Could not setup demo, found preconfigured meetups in"
+			+ " settings/meetups folder");
+	}
+})
+(readdir(resolve(__dirname, '../public/i/events')))
+	.invoke('filter', function (file) {
+		return (file.slice(-4) === '.jpg');
+	})
+(function (files) {
+	if (files.length) {
+		throw new Error("Could not setup demo, found preconfigured images in"
+			+ " public/i/events folder");
+	}
+})
+(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/images/*')) + " " +
+	stringify(resolve(__dirname, '../public/i/events/')))).match(
+		function (out, err) {
+			process.stdout.write(out);
+			process.stderr.write(err);
+			if (err) {
+				throw new Error("Error ocurred");
+			}
+		})
+(ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/settings/*')) +
+	" " + stringify(resolve(__dirname, '../settings/')))).match(
+		function (out, err) {
+			process.stdout.write(out);
+			process.stderr.write(err);
+			if (err) {
+				throw new Error("Error ocurred");
+			}
+		})
+(console.log.bind(console,
+	"Demo sucesfully setup. Run `bin/update & node .` to run application"))
+	.end();
