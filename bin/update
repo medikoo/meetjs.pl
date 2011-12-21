@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
 'use strict';
-
-require('../lib/server/webmake')()
+require('../lib/server/init-settings')()
 (function () {
-	console.log("Mettups & Webmake & Manifest: done");
+	console.log("Settings: done");
+	return require('../lib/server/webmake')()
+	(function () {
+		console.log("Mettups & Webmake & Manifest: done");
+	})
 }).end();
 
