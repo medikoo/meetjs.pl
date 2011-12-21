@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 'use strict';
-require('../lib/server/init-settings')()
+
+module.exports = require('../lib/server/init-settings')()
 (function () {
 	console.log("Settings: done");
 	return require('../lib/server/webmake')()

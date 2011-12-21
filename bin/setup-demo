@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 var stringify = JSON.stringify
-  , readdir = require('fs').readdir
-  , resolve = require('path').resolve
-  , exec    = require('child_process').exec
-  , count = require('es5-ext/lib/Object/plain/count').call
-  , ba2p         = require('deferred/lib/async-to-promise').bind
+  , readdir   = require('fs').readdir
+  , resolve   = require('path').resolve
+  , exec      = require('child_process').exec
+  , count     = require('es5-ext/lib/Object/plain/count').call
+  , ba2p      = require('deferred/lib/async-to-promise').bind
 
   , checkSettings;
 
@@ -57,6 +57,7 @@ readdir(resolve(__dirname, '../settings/meetups'))
 			if (err) {
 				throw new Error("Error ocurred");
 			}
+			console.log("Copied images");
 		})
 (ba2p(exec, 'cp -a ' + stringify(resolve(__dirname, '../demo/settings') + '/') +
 	"* " + stringify(resolve(__dirname, '../settings') + '/'))).match(
@@ -66,8 +67,12 @@ readdir(resolve(__dirname, '../settings/meetups'))
 			if (err) {
 				throw new Error("Error ocurred");
 			}
+			console.log("Copied settings");
 		})
 (function () {
-	console("Demo sucesfully setup. Run `bin/update & node .` "
+	return require('./update');
+})
+(function () {
+	console.log("Demo sucesfully setup. Run `node .` "
 		+ "to run application");
 }).end();
