@@ -22,7 +22,7 @@ in setting this application and playing with it, you can do with with following 
 
 Have [node.js](http://nodejs.org) installed.
 
-	$ git clone  && cd meetjs.pl
+	$ git clone git://github.com/medikoo/meetjs.pl.git  && cd meetjs.pl
 	$ npm install
 	$ bin/update
 
