@@ -18,7 +18,7 @@ If you're interested in further progress or want to help with project
 #### Usage & Installation
 
 It's not in ready state for reuse to build other applications but if you're interested
-in setting this application and playing with it, you can do with with following steps:
+in setting this application and playing with it, you can do it with following steps:
 
 Have [node.js](http://nodejs.org) installed.
 
